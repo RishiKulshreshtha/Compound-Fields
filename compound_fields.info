@@ -1,0 +1,4 @@
+name = Compound Fields
+description = Compound Fields for Drupal 7.x
+core = 7.x
+dependencies[] = options

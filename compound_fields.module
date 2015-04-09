@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_field_info().
+ */
+function compound_fields_field_info() {
+  module_load_include('inc', 'compound_fields', 'compound_fields.fields');
+  $dynamic_array = dynamic_array();
+  $array = array();
+
+  foreach ($dynamic_array as $key => $value) {
+    $array['compound_fields_' . $key] = array(
+      'label' => t('Compound Field - ' . $key),
+      'description' => t('This field stores ' . $key . 'compound field.'),
+      'settings' => array('allowed_values' => array(), 'allowed_values_function' => ''),
+      'instance_settings' => array('compound_fields_' . $key => ''),
+      'default_widget' => 'compound_fields_' . $key,
+      'default_formatter' => 'compound_fields_' . $key,
+    );
+  }
+  return $array;
+}
+
+/**
+ * Implements hook_field_widget_info().
+ */
+function compound_fields_field_widget_info() {
+  module_load_include('inc', 'compound_fields', 'compound_fields.fields');
+  $dynamic_array = dynamic_array();
+  $array = array();
+
+  foreach ($dynamic_array as $key => $value) {
+    $array['compound_fields_' . $key] = array(
+      'label' => t('Compound Field - ' . $key),
+      'field types' => array('compound_fields_' . $key),
+      'settings' => array('compound_fields_' . $key => ''),
+    );
+  }
+}

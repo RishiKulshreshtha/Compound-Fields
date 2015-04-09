@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Implements hook_field_schema().
+ */
+function compound_fields_field_schema($field) {
+  module_load_include('inc', 'compound_fields', 'compound_fields.fields');
+  /*
+   *if ($field['type'] == 'text_long') {
+   *  $columns = array(
+   *    'value' => array(
+   *      'type' => 'text',
+   *      'size' => 'big',
+   *      'not null' => FALSE,
+   *    ),
+   *  );
+   *}
+   *else {
+   *  $columns = array(
+   *    'value' => array(
+   *      'type' => 'varchar',
+   *      'length' => $field['settings']['max_length'],
+   *      'not null' => FALSE,
+   *    ),
+   *  );
+   *}
+   *$columns += array(
+   *  'format' => array(
+   *    'type' => 'int',
+   *    'unsigned' => TRUE,
+   *    'not null' => FALSE,
+   *  ),
+   *);
+   *return array(
+   *  'columns' => $columns,
+   *  'indexes' => array(
+   *    'format' => array('format'),
+   *  ),
+   *);
+   */
+  /*$columns = array(
+    '' => array(
+      'type' => '',
+      'length' => ,
+      'unsigned' => ,
+      'not null' => ,
+    ),
+  );
+  $columns = array(
+    '' => array(
+      'type' => '',
+      'length' => ,
+      'unsigned' => ,
+      'not null' => ,
+    ),
+  );
+  return array(
+    'columns' => $columns,
+    'indexes' => array(
+      '' => array(''),
+    ),
+  );*/
+}
